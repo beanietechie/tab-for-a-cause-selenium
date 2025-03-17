@@ -16,7 +16,7 @@ driver = webdriver.Firefox()
 stdout.write('browser started\n')
 
 driver.get('https://tab.gladly.io/newtab/')
-stdout.write('tab for a Cause page reached\n')
+stdout.write('tab for a cause page reached\n')
 
 wait = WebDriverWait(driver, 15)
 wait.until(lambda driver: driver.current_url == 'https://tab.gladly.io/newtab/auth/?app=tab') # wait for login page to load
@@ -35,7 +35,7 @@ submitBtn.click()
 stdout.write('credentials submitted\n')
 
 wait.until(lambda driver: driver.current_url == 'https://tab.gladly.io/newtab/') # wait for new tab page to load
-stdout.write('Tab for a Cause new tab page reached\n')
+stdout.write('tab for a tause new tab page reached\n')
 
 counter = 0
 while True:
