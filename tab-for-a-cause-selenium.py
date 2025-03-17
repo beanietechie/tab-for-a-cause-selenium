@@ -25,11 +25,11 @@ stdout.write('Login page reached, attempting to login.\n')
 loginBtn = wait.until(lambda driver: driver.find_element(By.CLASS_NAME, 'firebaseui-idp-password')) # wait for login button to load
 loginBtn.click()
 emailTxt = wait.until(lambda driver: driver.find_element(By.ID, 'ui-sign-in-email-input')) # wait for email input to load
-emailTxt.send_keys(email.email)
+emailTxt.send_keys(email)
 submitBtn = wait.until(lambda driver: driver.find_element(By.CLASS_NAME, 'firebaseui-id-submit')) # wait for submit button to load
 submitBtn.click()
 passwordTxt = wait.until(lambda driver: driver.find_element(By.ID, 'ui-sign-in-password-input')) # wait for password input to load
-passwordTxt.send_keys(password.password)
+passwordTxt.send_keys(password)
 submitBtn = wait.until(lambda driver: driver.find_element(By.CLASS_NAME, 'firebaseui-id-submit')) # wait for submit button to load
 submitBtn.click()
 stdout.write('credentials submitted\n')
