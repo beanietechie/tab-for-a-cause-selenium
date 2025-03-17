@@ -1,0 +1,1 @@
+pyinstaller --clean --onedir --icon=icon.png tab-for-a-cause-selenium.py
