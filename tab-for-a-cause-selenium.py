@@ -8,7 +8,9 @@ import os
 def main():
     print('=== tab-for-a-cause-selenium ===')
 
-    credentialsFile = open('credentials.txt', 'r')
+    scriptDir = os.path.dirname(os.path.abspath(__file__)) # get the directory of the script
+    credentialsPath = os.path.join(scriptDir, 'credentials.txt') # get the path to the credentials file
+    credentialsFile = open(credentialsPath, 'r')
     email = credentialsFile.readline().strip()
     password = credentialsFile.readline().strip()
     print('credentials read')
