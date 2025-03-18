@@ -36,7 +36,7 @@ def main():
     stdout.write('credentials submitted\n')
 
     wait.until(lambda driver: driver.current_url == 'https://tab.gladly.io/newtab/') # wait for new tab page to load
-    stdout.write('tab for a tause new tab page reached\n')
+    stdout.write('tab for a cause new tab page reached\n')
 
     counter = 0
     while True:
