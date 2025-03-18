@@ -1,6 +1,4 @@
-from io import TextIOWrapper
 from selenium import webdriver
-from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import WebDriverException
@@ -10,9 +8,9 @@ from sys import stdout
 def main():
     stdout.write('=== tab-for-a-cause-selenium ===\n')
 
-    credentialsFile: TextIOWrapper = open('credentials.txt', 'r')
-    email: str = credentialsFile.readline().strip()
-    password: str = credentialsFile.readline().strip()
+    credentialsFile = open('credentials.txt', 'r')
+    email = credentialsFile.readline().strip()
+    password = credentialsFile.readline().strip()
     stdout.write('credentials read\n')
 
     driver = webdriver.Firefox()
@@ -25,13 +23,13 @@ def main():
     wait.until(lambda driver: driver.current_url == 'https://tab.gladly.io/newtab/auth/?app=tab') # wait for login page to load
     stdout.write('Login page reached, attempting to login.\n')
 
-    loginBtn: WebElement = wait.until(lambda driver: driver.find_element(By.CLASS_NAME, 'firebaseui-idp-password')) # wait for login button to load
+    loginBtn = wait.until(lambda driver: driver.find_element(By.CLASS_NAME, 'firebaseui-idp-password')) # wait for login button to load
     loginBtn.click()
-    emailTxt: WebElement = wait.until(lambda driver: driver.find_element(By.ID, 'ui-sign-in-email-input')) # wait for email input to load
+    emailTxt = wait.until(lambda driver: driver.find_element(By.ID, 'ui-sign-in-email-input')) # wait for email input to load
     emailTxt.send_keys(email)
-    submitBtn: WebElement = wait.until(lambda driver: driver.find_element(By.CLASS_NAME, 'firebaseui-id-submit')) # wait for submit button to load
+    submitBtn = wait.until(lambda driver: driver.find_element(By.CLASS_NAME, 'firebaseui-id-submit')) # wait for submit button to load
     submitBtn.click()
-    passwordTxt: WebElement = wait.until(lambda driver: driver.find_element(By.ID, 'ui-sign-in-password-input')) # wait for password input to load
+    passwordTxt = wait.until(lambda driver: driver.find_element(By.ID, 'ui-sign-in-password-input')) # wait for password input to load
     passwordTxt.send_keys(password)
     submitBtn = wait.until(lambda driver: driver.find_element(By.CLASS_NAME, 'firebaseui-id-submit')) # wait for submit button to load
     submitBtn.click()
@@ -40,15 +38,12 @@ def main():
     wait.until(lambda driver: driver.current_url == 'https://tab.gladly.io/newtab/') # wait for new tab page to load
     stdout.write('tab for a cause new tab page reached\n')
 
-    counter = 0
     while True:
         sleep(4)
         try:
             driver.refresh()
         except WebDriverException:
-            None
-        counter += 1
-        stdout.write('\rrefreshed %i time(s)' % counter)
+            stdout.write('refresh failed, continuing, if you see this repeatedly try restarting the program or check your internet connection\n')         
 
 if __name__ == '__main__':
     main()
