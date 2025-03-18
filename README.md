@@ -14,7 +14,7 @@ this is done by automatically opening and refreshing a [tab for a cause](https:/
 
 - firefox
 
-## how to use (windows installation)
+## how to use
 
 in the same directory as this document, make a `credentials.txt` file and put the account's credentials in it like the following
 
@@ -23,7 +23,7 @@ youremail
 yourpassword
 ```
 
-run (double click) the `shortcutwin.bat` batch script to create the shortcut
+run (double click) the `shortcutwin.bat` batch script to create the shortcut, rerun this if you ever move the directory this document is in
 
 run the `tab-for-a-cause-selenium` shortcut, this will open a console window that displays the program's output (this is normal), it will also open a firefox window to load the webpage in, it will attempt to login using the credentials in `credentials.txt`,
 
