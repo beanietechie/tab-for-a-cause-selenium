@@ -1,36 +1,32 @@
 # tab-for-a-cause-selenium
 
-## about
-
 donate to charity automatically for free using only a bit of processing power
 
-this is done by automatically refreshing a [Tab for a Cause](https://tab.gladly.io/) page in a browser
+this is done by automatically opening and refreshing a [tab for a cause](https://tab.gladly.io/) page in a browser
 
-## how to use (executable)
+## requirements
 
-coming soon
-
-## how to use (script)
-
-make sure you have a Tab for a Cause account,
-specifically one that uses the "Email address" sign up option
-(it's strongly recommended you DO NOT use your main account if you have one,
-instead make an alt account on Tab for a Cause to use for this script if this is the case)
-
-in the same directory as the `tab-for-a-cause-selenium.py` script,
-make a `credentials.txt` file and put the account's credentials in it like the following
-
-```txt
-youremail
-yourpassword
-```
-
-run the `tab-for-a-cause-selenium.py` script and let it run in the background
-
-## requirements (script)
+- tab for a cause account, specifically one that uses the "email address" sign up option, no other types of account will work with this, (it's strongly recommended you DO NOT use your main account if you have one, instead make an alt account on tab for a cause to use for this script if this is the case)
 
 - python 3
 
 - selenium
 
 - firefox
+
+## how to use (windows installation)
+
+in the same directory as this document, make a `credentials.txt` file and put the account's credentials in it like the following
+
+```txt
+youremail
+yourpassword
+```
+
+run (double click) the `shortcutwin.bat` batch script to create the shortcut
+
+run the `tab-for-a-cause-selenium` shortcut, this will open a console window that displays the program's output (this is normal), it will also open a firefox window to load the webpage in, it will attempt to login using the credentials in `credentials.txt`,
+
+you may minimize both of these windows and let the program run in the background
+
+to stop the program, close both the console and browser window it opened
