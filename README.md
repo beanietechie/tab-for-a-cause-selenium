@@ -25,7 +25,7 @@ yourpassword
 
 run (double click) the `shortcutwin.bat` batch script to create the shortcut, rerun this if you ever move the directory this document is in
 
-run the `tab-for-a-cause-selenium` shortcut, this will open a console window that displays the program's output (this is normal), it will also open a firefox window to load the webpage in, it will attempt to login using the credentials in `credentials.txt`,
+run the `tab-for-a-cause-selenium` shortcut, this will open a console window that displays the program's output (this is normal), it will also open a firefox window to load the webpage in, it will attempt to login using the credentials in `credentials.txt`, once it reaches the new tab page, it will repeatedly refresh to keep getting ad impressions, thus giving more money to tab for a cause
 
 you may minimize both of these windows and let the program run in the background
 
